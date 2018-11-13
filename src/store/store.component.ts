@@ -4,7 +4,6 @@ import { Component } from "@angular/core";
 
 @Component({
     selector:"store",
-    moduleId:module.id,
     templateUrl:"store.component.html"
 })
 
@@ -14,11 +13,11 @@ export class StoreComponent{
         
     }
     
-    getProducts():Product[]{
+    get products():Product[]{
         return this.repository.getProducts();
     }
 
-    getCategories():string[]{
+    get categories():string[]{
         return this.repository.getCategories();
     }
 }

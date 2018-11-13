@@ -1,10 +1,10 @@
 import { Product } from './product.model';
 import { Injectable } from '@angular/core';
 import { Observable, from } from 'rxjs';
-import 'rxjs/add/observable/from';
 
 
-Injectable()
+
+@Injectable()
 export class StaticDataSource {
     
     private products: Product[] = [

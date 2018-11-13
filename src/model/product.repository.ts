@@ -2,17 +2,18 @@ import {Product} from './product.model'
 import { StaticDataSource } from './static.datasource';
 import { Injectable } from '@angular/core';
 
-Injectable()
+@Injectable()
 export class ProductRepository{
     private products: Product[] = [];
     private categories: string[] = [];
 
     constructor(private dataSource: StaticDataSource){
-        dataSource.getProducts().subscribe(data => {
+       var products =  dataSource.getProducts().subscribe(data => {
             this.products = data;
             this.categories = data.map(p => p.category)
                 .filter((c,index,array) => array.indexOf(c) == index).sort();
         })
+        console.log(products);
     }
 
     getProducts(category: string = null): Product[] {
